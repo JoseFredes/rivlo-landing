@@ -2,8 +2,8 @@ import { type Dictionary } from "@/lib/i18n";
 import { Clock, ShieldCheck, TrendingUp, Users } from "lucide-react";
 
 const icons = [Clock, ShieldCheck, TrendingUp, Users];
-const iconColors = ["text-violet-400", "text-cyan-400", "text-emerald-400", "text-purple-400"];
-const bgColors = ["bg-violet-500/10", "bg-cyan-500/10", "bg-emerald-500/10", "bg-purple-500/10"];
+const iconColors = ["text-fuchsia-400", "text-pink-400", "text-violet-400", "text-rose-400"];
+const bgColors = ["bg-fuchsia-500/10", "bg-pink-500/10", "bg-violet-500/10", "bg-rose-500/10"];
 
 export function Benefits({ dict }: { dict: Dictionary }) {
   return (

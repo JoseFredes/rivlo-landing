@@ -10,13 +10,13 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
           Rivlo
         </Link>
         <nav className="hidden items-center gap-6 text-sm sm:flex">
-          <a href="#how-it-works" className="text-muted-foreground hover:text-purple-400 transition-colors">
+          <a href="#how-it-works" className="text-white/50 hover:text-fuchsia-400 transition-colors">
             {dict.nav.howItWorks}
           </a>
-          <a href="#benefits" className="text-muted-foreground hover:text-purple-400 transition-colors">
+          <a href="#benefits" className="text-white/50 hover:text-fuchsia-400 transition-colors">
             {dict.nav.benefits}
           </a>
-          <a href="#pricing" className="text-muted-foreground hover:text-purple-400 transition-colors">
+          <a href="#pricing" className="text-white/50 hover:text-fuchsia-400 transition-colors">
             {dict.nav.pricing}
           </a>
         </nav>

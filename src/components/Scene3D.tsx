@@ -59,7 +59,7 @@ function FloatingRing({ position, color, speed }: {
           transparent
           opacity={0.5}
           emissive={color}
-          emissiveIntensity={0.3}
+          emissiveIntensity={0.4}
         />
       </Torus>
     </Float>
@@ -92,7 +92,7 @@ function Particles() {
           args={[points, 3]}
         />
       </bufferGeometry>
-      <pointsMaterial size={0.025} color="#7b61ff" transparent opacity={0.5} sizeAttenuation />
+      <pointsMaterial size={0.025} color="#d946ef" transparent opacity={0.5} sizeAttenuation />
     </points>
   );
 }
@@ -105,17 +105,17 @@ export function Scene3D() {
         style={{ background: "transparent" }}
         gl={{ alpha: true, antialias: true }}
       >
-        <ambientLight intensity={0.3} />
-        <directionalLight position={[5, 5, 5]} intensity={0.6} color="#7b61ff" />
-        <directionalLight position={[-5, -5, 5]} intensity={0.4} color="#06b6d4" />
-        <pointLight position={[0, 0, 4]} intensity={0.4} color="#00d4aa" />
+        <ambientLight intensity={0.25} />
+        <directionalLight position={[5, 5, 5]} intensity={0.6} color="#d946ef" />
+        <directionalLight position={[-5, -5, 5]} intensity={0.4} color="#a855f7" />
+        <pointLight position={[0, 0, 4]} intensity={0.5} color="#ec4899" />
 
-        <GlowOrb position={[-3, 1.2, -1]} color="#7b61ff" speed={1.2} distort={0.4} size={1.6} opacity={0.4} />
-        <GlowOrb position={[3.2, -0.8, -1.5]} color="#06b6d4" speed={0.9} distort={0.35} size={1.3} opacity={0.35} />
-        <GlowOrb position={[0.5, 2.2, -2]} color="#00d4aa" speed={0.7} distort={0.3} size={1} opacity={0.4} />
-        <GlowOrb position={[-1.5, -2, -2.5]} color="#8b5cf6" speed={0.8} distort={0.25} size={0.9} opacity={0.3} />
-        <FloatingRing position={[3.5, 1.8, -1.5]} color="#7b61ff" speed={1} />
-        <FloatingRing position={[-3.5, -1.5, -2]} color="#06b6d4" speed={0.8} />
+        <GlowOrb position={[-3, 1.2, -1]} color="#d946ef" speed={1.2} distort={0.4} size={1.6} opacity={0.4} />
+        <GlowOrb position={[3.2, -0.8, -1.5]} color="#a855f7" speed={0.9} distort={0.35} size={1.3} opacity={0.35} />
+        <GlowOrb position={[0.5, 2.2, -2]} color="#ec4899" speed={0.7} distort={0.3} size={1} opacity={0.4} />
+        <GlowOrb position={[-1.5, -2, -2.5]} color="#f43f5e" speed={0.8} distort={0.25} size={0.9} opacity={0.3} />
+        <FloatingRing position={[3.5, 1.8, -1.5]} color="#d946ef" speed={1} />
+        <FloatingRing position={[-3.5, -1.5, -2]} color="#ec4899" speed={0.8} />
         <Particles />
       </Canvas>
     </div>

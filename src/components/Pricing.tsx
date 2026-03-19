@@ -14,7 +14,7 @@ export function Pricing({ dict }: { dict: Dictionary }) {
           <p className="mt-4 text-lg text-muted-foreground">
             {dict.pricing.subtitle}
           </p>
-          <Badge className="mt-4 bg-violet-500/15 text-violet-300 border-violet-500/20 hover:bg-violet-500/25">
+          <Badge className="mt-4 bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/20 hover:bg-fuchsia-500/25">
             {dict.pricing.comingSoon}
           </Badge>
         </div>
@@ -26,13 +26,13 @@ export function Pricing({ dict }: { dict: Dictionary }) {
                 key={i}
                 className={`relative rounded-2xl p-6 transition-all hover:translate-y-[-2px] ${
                   isPopular
-                    ? "card-gradient-border glow-purple"
+                    ? "card-gradient-border glow-pink"
                     : "glass rounded-2xl"
                 }`}
               >
                 {isPopular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white border-0">
+                    <Badge className="bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white border-0">
                       Popular
                     </Badge>
                   </div>
@@ -53,8 +53,8 @@ export function Pricing({ dict }: { dict: Dictionary }) {
                 </div>
                 <ul className="mt-6 space-y-3">
                   {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm text-white/80">
-                      <Check className="h-4 w-4 text-emerald-400 shrink-0" />
+                    <li key={j} className="flex items-center gap-2 text-sm text-white/70">
+                      <Check className="h-4 w-4 text-fuchsia-400 shrink-0" />
                       {feature}
                     </li>
                   ))}
