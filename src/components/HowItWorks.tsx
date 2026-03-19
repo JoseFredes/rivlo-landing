@@ -3,9 +3,9 @@ import { Upload, Brain, BarChart3 } from "lucide-react";
 
 const icons = [Upload, Brain, BarChart3];
 const gradients = [
-  "from-purple-500 to-violet-600",
-  "from-cyan-500 to-blue-600",
-  "from-pink-500 to-rose-600",
+  "from-violet-500 to-purple-600",
+  "from-cyan-500 to-teal-600",
+  "from-emerald-500 to-green-600",
 ];
 
 export function HowItWorks({ dict }: { dict: Dictionary }) {
@@ -26,13 +26,13 @@ export function HowItWorks({ dict }: { dict: Dictionary }) {
             const Icon = icons[i];
             return (
               <div key={i} className="group flex flex-col items-center text-center">
-                <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${gradients[i]} shadow-lg shadow-purple-500/20 transition-transform group-hover:scale-110`}>
+                <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${gradients[i]} shadow-lg transition-transform group-hover:scale-110`}>
                   <Icon className="h-7 w-7 text-white" />
                 </div>
-                <div className="mt-3 flex h-8 w-8 items-center justify-center rounded-full border border-purple-500/30 text-sm font-medium text-purple-400">
+                <div className="mt-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-sm font-medium text-white/60">
                   {i + 1}
                 </div>
-                <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
+                <h3 className="mt-4 text-lg font-semibold text-white">{step.title}</h3>
                 <p className="mt-2 text-muted-foreground">{step.description}</p>
               </div>
             );

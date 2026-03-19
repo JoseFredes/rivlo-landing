@@ -42,7 +42,7 @@ export function WaitlistForm({ lang, dict }: { lang: Lang; dict: Dictionary }) {
 
   if (status === "success") {
     return (
-      <div className="flex items-center gap-2 rounded-xl border border-green-500/30 bg-green-500/10 p-4 text-green-300 backdrop-blur-sm">
+      <div className="flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-emerald-300 backdrop-blur-sm">
         <CheckCircle2 className="h-5 w-5 shrink-0" />
         <p className="text-sm">{dict.waitlist.success}</p>
       </div>
@@ -58,20 +58,20 @@ export function WaitlistForm({ lang, dict }: { lang: Lang; dict: Dictionary }) {
           placeholder={dict.waitlist.emailPlaceholder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="sm:min-w-[240px] bg-white/5 border-white/10 placeholder:text-white/30 focus:border-purple-500/50 focus:ring-purple-500/20"
+          className="sm:min-w-[240px] bg-white/5 border-white/8 placeholder:text-white/25 text-white focus-visible:border-violet-500/50 focus-visible:ring-violet-500/20"
         />
         <Input
           type="text"
           placeholder={dict.waitlist.namePlaceholder}
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="bg-white/5 border-white/10 placeholder:text-white/30 focus:border-purple-500/50 focus:ring-purple-500/20"
+          className="bg-white/5 border-white/8 placeholder:text-white/25 text-white focus-visible:border-violet-500/50 focus-visible:ring-violet-500/20"
         />
       </div>
       <Button
         type="submit"
         disabled={status === "loading"}
-        className="shrink-0 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white border-0 shadow-lg shadow-purple-500/25 transition-all hover:shadow-purple-500/40"
+        className="shrink-0 bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white border-0 shadow-lg shadow-violet-500/20 transition-all hover:shadow-violet-500/30 cursor-pointer"
       >
         {status === "loading" ? (
           <Loader2 className="h-4 w-4 animate-spin" />

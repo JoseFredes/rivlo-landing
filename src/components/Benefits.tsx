@@ -2,8 +2,8 @@ import { type Dictionary } from "@/lib/i18n";
 import { Clock, ShieldCheck, TrendingUp, Users } from "lucide-react";
 
 const icons = [Clock, ShieldCheck, TrendingUp, Users];
-const iconColors = ["text-purple-400", "text-cyan-400", "text-pink-400", "text-violet-400"];
-const bgColors = ["bg-purple-500/10", "bg-cyan-500/10", "bg-pink-500/10", "bg-violet-500/10"];
+const iconColors = ["text-violet-400", "text-cyan-400", "text-emerald-400", "text-purple-400"];
+const bgColors = ["bg-violet-500/10", "bg-cyan-500/10", "bg-emerald-500/10", "bg-purple-500/10"];
 
 export function Benefits({ dict }: { dict: Dictionary }) {
   return (
@@ -23,12 +23,12 @@ export function Benefits({ dict }: { dict: Dictionary }) {
             return (
               <div
                 key={i}
-                className="group gradient-border rounded-xl p-6 transition-all hover:translate-y-[-2px] hover:shadow-lg hover:shadow-purple-500/10"
+                className="card-gradient-border rounded-2xl p-6 transition-all hover:translate-y-[-2px]"
               >
                 <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${bgColors[i]}`}>
                   <Icon className={`h-6 w-6 ${iconColors[i]}`} />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+                <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
                 <p className="mt-2 text-muted-foreground">
                   {item.description}
                 </p>

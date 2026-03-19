@@ -14,7 +14,7 @@ export function Pricing({ dict }: { dict: Dictionary }) {
           <p className="mt-4 text-lg text-muted-foreground">
             {dict.pricing.subtitle}
           </p>
-          <Badge className="mt-4 bg-purple-500/20 text-purple-300 border-purple-500/30 hover:bg-purple-500/30">
+          <Badge className="mt-4 bg-violet-500/15 text-violet-300 border-violet-500/20 hover:bg-violet-500/25">
             {dict.pricing.comingSoon}
           </Badge>
         </div>
@@ -24,24 +24,24 @@ export function Pricing({ dict }: { dict: Dictionary }) {
             return (
               <div
                 key={i}
-                className={`relative rounded-xl p-6 transition-all hover:translate-y-[-2px] ${
+                className={`relative rounded-2xl p-6 transition-all hover:translate-y-[-2px] ${
                   isPopular
-                    ? "gradient-border glow-purple"
-                    : "glass"
+                    ? "card-gradient-border glow-purple"
+                    : "glass rounded-2xl"
                 }`}
               >
                 {isPopular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white border-0">
+                    <Badge className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white border-0">
                       Popular
                     </Badge>
                   </div>
                 )}
                 <div>
-                  <h3 className="text-lg font-semibold">{plan.name}</h3>
+                  <h3 className="text-lg font-semibold text-white">{plan.name}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{plan.description}</p>
                   <div className="mt-4">
-                    <span className={`text-4xl font-bold ${isPopular ? "gradient-text" : ""}`}>
+                    <span className={`text-4xl font-bold ${isPopular ? "gradient-text" : "text-white"}`}>
                       {plan.price}
                     </span>
                     {plan.price !== dict.pricing.free && (
@@ -53,8 +53,8 @@ export function Pricing({ dict }: { dict: Dictionary }) {
                 </div>
                 <ul className="mt-6 space-y-3">
                   {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm">
-                      <Check className="h-4 w-4 text-purple-400 shrink-0" />
+                    <li key={j} className="flex items-center gap-2 text-sm text-white/80">
+                      <Check className="h-4 w-4 text-emerald-400 shrink-0" />
                       {feature}
                     </li>
                   ))}
