@@ -99,7 +99,7 @@ function Particles() {
 
 export function Scene3D() {
   return (
-    <div className="absolute inset-0 -z-10">
+    <div className="fixed inset-0 -z-10">
       <Canvas
         camera={{ position: [0, 0, 7], fov: 55 }}
         style={{ background: "transparent" }}

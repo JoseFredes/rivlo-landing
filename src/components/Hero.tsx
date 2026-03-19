@@ -1,11 +1,9 @@
 import { type Lang, type Dictionary } from "@/lib/i18n";
 import { WaitlistForm } from "./WaitlistForm";
-import { Scene3D } from "./Scene3D";
 
 export function Hero({ lang, dict }: { lang: Lang; dict: Dictionary }) {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      <Scene3D />
       <div className="absolute inset-0 mesh-gradient pointer-events-none" />
       <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:py-40 relative z-10">
         <div className="inline-flex items-center gap-2 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 px-4 py-1.5 text-sm text-fuchsia-300 mb-8 backdrop-blur-sm">

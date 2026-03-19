@@ -6,6 +6,7 @@ import { Benefits } from "@/components/Benefits";
 import { Pricing } from "@/components/Pricing";
 import { WaitlistCTA } from "@/components/WaitlistCTA";
 import { Footer } from "@/components/Footer";
+import { Scene3D } from "@/components/Scene3D";
 
 export function generateStaticParams() {
   return [{ lang: "es" }, { lang: "en" }];
@@ -34,16 +35,19 @@ export default async function LandingPage({
   const dict = getDictionary(lang);
 
   return (
-    <div className="min-h-screen">
-      <Header lang={lang} dict={dict} />
-      <main>
-        <Hero lang={lang} dict={dict} />
-        <HowItWorks dict={dict} />
-        <Benefits dict={dict} />
-        <Pricing dict={dict} />
-        <WaitlistCTA lang={lang} dict={dict} />
-      </main>
-      <Footer dict={dict} />
+    <div className="relative min-h-screen">
+      <Scene3D />
+      <div className="relative z-10">
+        <Header lang={lang} dict={dict} />
+        <main>
+          <Hero lang={lang} dict={dict} />
+          <HowItWorks dict={dict} />
+          <Benefits dict={dict} />
+          <Pricing dict={dict} />
+          <WaitlistCTA lang={lang} dict={dict} />
+        </main>
+        <Footer dict={dict} />
+      </div>
     </div>
   );
 }
