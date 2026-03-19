@@ -1,15 +1,16 @@
 import { type Dictionary } from "@/lib/i18n";
 import { Clock, ShieldCheck, TrendingUp, Users } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const icons = [Clock, ShieldCheck, TrendingUp, Users];
+const iconColors = ["text-purple-400", "text-cyan-400", "text-pink-400", "text-violet-400"];
+const bgColors = ["bg-purple-500/10", "bg-cyan-500/10", "bg-pink-500/10", "bg-violet-500/10"];
 
 export function Benefits({ dict }: { dict: Dictionary }) {
   return (
-    <section id="benefits" className="border-t py-20 sm:py-28">
+    <section id="benefits" className="relative border-t border-white/5 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
             {dict.benefits.title}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -20,17 +21,18 @@ export function Benefits({ dict }: { dict: Dictionary }) {
           {dict.benefits.items.map((item, i) => {
             const Icon = icons[i];
             return (
-              <Card key={i} className="border-0 shadow-sm bg-muted/30">
-                <CardHeader>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <CardTitle className="mt-3 text-lg">{item.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {item.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <div
+                key={i}
+                className="group gradient-border rounded-xl p-6 transition-all hover:translate-y-[-2px] hover:shadow-lg hover:shadow-purple-500/10"
+              >
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${bgColors[i]}`}>
+                  <Icon className={`h-6 w-6 ${iconColors[i]}`} />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
             );
           })}
         </div>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { type Lang, type Dictionary } from "@/lib/i18n";
-import { Loader2, CheckCircle2 } from "lucide-react";
+import { Loader2, CheckCircle2, ArrowRight } from "lucide-react";
 
 export function WaitlistForm({ lang, dict }: { lang: Lang; dict: Dictionary }) {
   const [email, setEmail] = useState("");
@@ -42,7 +42,7 @@ export function WaitlistForm({ lang, dict }: { lang: Lang; dict: Dictionary }) {
 
   if (status === "success") {
     return (
-      <div className="flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-4 text-green-800">
+      <div className="flex items-center gap-2 rounded-xl border border-green-500/30 bg-green-500/10 p-4 text-green-300 backdrop-blur-sm">
         <CheckCircle2 className="h-5 w-5 shrink-0" />
         <p className="text-sm">{dict.waitlist.success}</p>
       </div>
@@ -58,27 +58,35 @@ export function WaitlistForm({ lang, dict }: { lang: Lang; dict: Dictionary }) {
           placeholder={dict.waitlist.emailPlaceholder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="sm:min-w-[240px]"
+          className="sm:min-w-[240px] bg-white/5 border-white/10 placeholder:text-white/30 focus:border-purple-500/50 focus:ring-purple-500/20"
         />
         <Input
           type="text"
           placeholder={dict.waitlist.namePlaceholder}
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="bg-white/5 border-white/10 placeholder:text-white/30 focus:border-purple-500/50 focus:ring-purple-500/20"
         />
       </div>
-      <Button type="submit" disabled={status === "loading"} className="shrink-0">
+      <Button
+        type="submit"
+        disabled={status === "loading"}
+        className="shrink-0 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white border-0 shadow-lg shadow-purple-500/25 transition-all hover:shadow-purple-500/40"
+      >
         {status === "loading" ? (
           <Loader2 className="h-4 w-4 animate-spin" />
         ) : (
-          dict.waitlist.cta
+          <>
+            {dict.waitlist.cta}
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </>
         )}
       </Button>
       {status === "duplicate" && (
-        <p className="text-sm text-amber-600">{dict.waitlist.alreadyRegistered}</p>
+        <p className="text-sm text-amber-400">{dict.waitlist.alreadyRegistered}</p>
       )}
       {status === "error" && (
-        <p className="text-sm text-destructive">{dict.waitlist.error}</p>
+        <p className="text-sm text-red-400">{dict.waitlist.error}</p>
       )}
     </form>
   );
